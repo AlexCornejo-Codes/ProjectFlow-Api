@@ -1,0 +1,9 @@
+services:
+  projectflow.api:
+    image: ${DOCKER_REGISTRY-}projectflowapi
+    build:
+      context: .
+      dockerfile: ProjectFlow.Api/Dockerfile
+    ports:
+      - 5000:8080
+      - 5001:8081
