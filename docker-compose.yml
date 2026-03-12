@@ -14,6 +14,17 @@ services:
       # Aspire Dashboard
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://projectflow.aspire-dashboard:18889
       - OTEL_EXPORTER_OTLP_PROTOCOL=grpc
+      
+  projectflow.postgres:
+    image: postgres:17.2
+    environment:
+      POSTGRES_DB: projectflow
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./.containers/postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
 
   projectflow.seq:
     image: datalust/seq:2024.3
