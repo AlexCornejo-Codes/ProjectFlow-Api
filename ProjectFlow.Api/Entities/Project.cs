@@ -10,7 +10,7 @@ public sealed class Project
     public ProjectPriority Priority { get; set; }
     public Target Target { get; set; }
     public bool IsArchived { get; set; }
-    public DateTime? EndDate { get; set; }
+    public DateOnly? EndDate { get; set; }
     public Milestone? Milestone { get; set; }
     public DateTime CreatedAtUtc { get; set; }
     public DateTime? UpdatedAtUtc { get; set; }
